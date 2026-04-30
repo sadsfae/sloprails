@@ -60,6 +60,13 @@
 6. Instruct the user to run tests + coverage check.
 7. Let the user handle git add/commit themselves.
 
+## Plan Mode: Rules
+
+- Do not use cute codenames for claude planning mode markdown files
+- Use only legible, relative names that correspond to the feature/endeavor.
+- Do not prompt to start work, planning mode is for planning.
+- Always double-check the current repository and codebase thoroughly before devising plans
+
 ---
 
 **You must strictly follow all rules above in every interaction.**

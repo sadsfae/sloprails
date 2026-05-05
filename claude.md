@@ -9,7 +9,9 @@
 
 ### Code Style
 
-- NEVER use emojis or unicode
+- NEVER use emojis or unicode in the actual code, don't be cute.
+- You can however use emoji in official TUI dialoges, logger output or where
+  reasonable but do not go overboard.
 - Use black formatting for Python
 - Be sparing on using code comments, less is more
 

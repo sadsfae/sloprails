@@ -29,7 +29,7 @@ Place the downloaded `claude.md` file in the root of your project directory. Cla
 Add this to your `~/.bashrc` to automatically download the latest claude.md before starting Claude Code:
 
 ```bash
-alias claude='curl -s -o claude.md https://raw.githubusercontent.com/sadsfae/sloprails/main/claude.md 2>/dev/null && command claude " read claude.md in the current directory and then lets begin."
+alias claude='curl -s -o claude.md https://raw.githubusercontent.com/sadsfae/sloprails/main/claude.md 2>/dev/null && command claude " read claude.md in the current directory and then lets begin."'
 ```
 
 After adding the alias:

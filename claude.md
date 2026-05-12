@@ -14,6 +14,7 @@
   reasonable but do not go overboard.
 - Use black formatting for Python
 - Be sparing on using code comments, less is more
+- For tests and test coverage always ensure full Black style is applied
 
 ### Code Quality & DRY
 
@@ -64,6 +65,7 @@
 
 ## Plan Mode: Rules
 
+- In Plan Mode, always stop to ensure we have reviewed the plans
 - Do not use cute codenames for claude planning mode markdown files
 - Use only legible, relative names that correspond to the feature/endeavor.
 - Do not prompt to start work, planning mode is for planning.

@@ -16,6 +16,54 @@
 - Be sparing on using code comments, less is more
 - For tests and test coverage always ensure full Black style is applied
 
+### Ensure SOLID Principles
+
+- Functional example: If we are working on "QUADS" it uses a plugin architecture, we should ALWAYS stick within the bounds of each plugin and dispatcher and component has a specific job to do, do not deviate from this design.
+
+You **must** apply SOLID principles to all code you write or refactor. These are not optional. When a request would lead you to violate one of these, stop and flag it rather than silently producing the violation.
+
+#### S — Single Responsibility Principle
+
+- Every class, module, or function should have **one reason to change**.
+- If you're writing a class and find yourself using "and" to describe what it does, split it.
+- Keep business logic, persistence, and presentation/serialization in separate units.
+- **Red flag to avoid:** a single "manager" or "utils" class accumulating unrelated methods.
+
+#### O — Open/Closed Principle
+
+- Code should be **open for extension, closed for modification**.
+- Prefer adding new behavior via new classes/functions or polymorphism rather than editing existing tested code with new conditional branches.
+- When you see a growing `if/elif` or `switch` on a type field, propose a polymorphic or strategy-based design instead.
+
+#### L — Liskov Substitution Principle
+
+- Subtypes must be **fully substitutable** for their base types.
+- A subclass must not strengthen preconditions, weaken postconditions, or throw new unexpected exceptions the base type doesn't declare.
+- If an override has to do nothing or raise "not supported," the inheritance hierarchy is wrong — use composition instead.
+
+#### I — Interface Segregation Principle
+
+- Prefer **many small, focused interfaces** over one large general-purpose one.
+- No class should be forced to implement methods it doesn't use.
+- When defining an abstract base class or protocol, keep it minimal and cohesive.
+
+#### D — Dependency Inversion Principle
+
+- High-level modules must **not depend on low-level modules**; both depend on abstractions.
+- Depend on interfaces/protocols, not concrete implementations.
+- Pass dependencies in (constructor injection or parameters) rather than instantiating them inside the consumer — this keeps things testable.
+
+---
+
+## Enforcement Behavior
+
+When working in this codebase, you must:
+
+1. **Call out violations** — If existing code or a requested change violates SOLID, say so explicitly before proceeding, and explain which principle and why.
+2. **Propose the compliant alternative** — Don't just refuse; show the SOLID-respecting design.
+3. **Ask when there's tension** — If strictly applying SOLID conflicts with simplicity (e.g., this is a tiny script or a one-off), ask whether to prioritize pragmatism here rather than over-engineering.
+4. **Don't over-abstract** — SOLID serves maintainability, not ceremony. Avoid creating interfaces with a single implementation "just in case" unless extension is genuinely anticipated. YAGNI still applies.
+
 ### Code Quality & DRY
 
 - Always follow **DRY** (Don't Repeat Yourself) principles where feasible.

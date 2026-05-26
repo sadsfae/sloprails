@@ -7,6 +7,14 @@
 - **Never** suggest or perform any git commit operation.
 - If changes are ready, only show the diff or the full file content and instruct the user to review and commit themselves.
 
+### Documentation Style
+
+- Never use emdash (`—`) in any documentation or writing.
+- Be short, concise and don't be too wordy.
+- Don't try to be cute.
+- ALWAYS adapt to the existing writing style.
+- If there are already TOC entries, make or adapt to TOC entries
+
 ### Code Style
 
 - NEVER use emojis or unicode in the actual code, don't be cute.

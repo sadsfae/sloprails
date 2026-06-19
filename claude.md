@@ -101,6 +101,12 @@ When working in this codebase, you must:
   - Always evaluate whether new tests are needed.
   - Add or update tests proactively to keep coverage stable or higher.
 - Prefer running `pytest --cov` (or equivalent coverage command) to verify.
+- Always try to use the code repository as Python Path instead of falling back
+  to trying to use pip with venv.  e.g.
+
+```
+PYTHONPATH=src python -m pytest tests/plugins/test_validator_environment.py
+```
 
 ### General Behavior
 

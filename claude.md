@@ -7,6 +7,28 @@
 - **Never** suggest or perform any git commit operation.
 - If changes are ready, only show the diff or the full file content and instruct the user to review and commit themselves.
 
+### Git & Gerrithub Version Control and operation
+
+- Unless otherwise explicitly allowed for the session, the first section applies to never do git add, git commit.
+- If the user indicates (ask permission) to perform Gerrit or Github activities the following must be honored:
+
+#### Gerrithub Workflow
+
+- Gerrithub uses `git review` with `git review development` being the equivalent of `git push`
+- Gerrithub uses git hooks so there is no need to manage change-id in commit messages, a simple `git commit --amend` does this.
+- If the user allows for the current session only full autonomy the following practices apply and must not be deviated:
+  - **ALWAYS** use a separate, fresh git branch checked out on top of `development` e.g. `git checkout -b $GITHUB ISSUE`
+  - Commit messages should follow semantic versioning standards e.g. fix: chore: feat:
+  - Commit messages should contain a single, simple summary e.g. `fix: address memcp bug in standard.py` followed by a space and then a brief but poignant summmary of the change, followed by three spaces and a `fixes: https://github.com/quadsproject/issues/3345` or relevant issue that was opened, followed by four more empty spaces. Lastly, an extra `git commit --amend` must be run to ensure the gerrit gitreview hook generates its own unique `Change-id` and this will never change, nor does it need to be modified.
+  - `git add` files
+  - `git commit --amend` must be run after any additional change
+  - a `git review development` can then be run to submit the patchset.
+
+  #### General Git operation
+  - Utilize the `gh` CLI if the user indicates an override from the primary rules of not performing git operations: git commit and git push
+  - Utilize the `gh` CLI to open issues in the respective repository for active issues if one doesn't exist already
+  - **NEVER** attribute the AI agent e.g. `assisted-by: claude` or give any accreditation to the AI agent in commit messages.
+
 ### Documentation Style
 
 - Never use emdash (`—`) in any documentation or writing.
@@ -102,7 +124,7 @@ When working in this codebase, you must:
   - Add or update tests proactively to keep coverage stable or higher.
 - Prefer running `pytest --cov` (or equivalent coverage command) to verify.
 - Always try to use the code repository as Python Path instead of falling back
-  to trying to use pip with venv.  e.g.
+  to trying to use pip with venv. e.g.
 
 ```
 PYTHONPATH=src python -m pytest tests/plugins/test_validator_environment.py

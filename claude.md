@@ -18,8 +18,9 @@
 - Gerrithub uses git hooks so there is no need to manage change-id in commit messages, a simple `git commit --amend` does this.
 - If the user allows for the current session only full autonomy the following practices apply and must not be deviated:
   - **ALWAYS** use a separate, fresh git branch checked out on top of `development` e.g. `git checkout -b $GITHUB ISSUE`
+  - **ALWAYS** use one new branch per patchset, and keep each patchset to it's own branch.
   - Commit messages should follow semantic versioning standards e.g. fix: chore: feat:
-  - Commit messages should contain a single, simple summary e.g. `fix: address memcp bug in standard.py` followed by a space and then a brief but poignant summmary of the change, followed by three spaces and a `fixes: https://github.com/quadsproject/issues/3345` or relevant issue that was opened, followed by four more empty spaces. Lastly, an extra `git commit --amend` must be run to ensure the gerrit gitreview hook generates its own unique `Change-id` and this will never change, nor does it need to be modified.
+  - Commit messages should contain a single, simple summary e.g. `fix: address memcp bug in standard.py` followed by a space and then a brief but poignant summary of the change, followed by three spaces and a `fixes: https://github.com/quadsproject/issues/3345` or relevant issue that was opened, followed by four more empty spaces. Lastly, an extra `git commit --amend` must be run to ensure the gerrit gitreview hook generates its own unique `Change-id` and this will never change, nor does it need to be modified.
   - `git add` files
   - `git commit --amend` must be run after any additional change
   - a `git review development` can then be run to submit the patchset.

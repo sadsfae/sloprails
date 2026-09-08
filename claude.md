@@ -25,6 +25,8 @@
   - `git commit --amend` must be run after any additional change
   - a `git review development` can then be run to submit the patchset.
 
+* NO MATTER WHAT, NEVER EVER RUN GIT PUSH WITH A GERRITHUB WORKFLOW.
+
   #### General Git operation
   - Utilize the `gh` CLI if the user indicates an override from the primary rules of not performing git operations: git commit and git push
   - Utilize the `gh` CLI to open issues in the respective repository for active issues if one doesn't exist already

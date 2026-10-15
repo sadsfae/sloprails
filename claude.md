@@ -12,6 +12,10 @@
 - Unless otherwise explicitly allowed for the session, the first section applies to never do git add, git commit.
 - If the user indicates (ask permission) to perform Gerrit or Github activities the following must be honored:
 
+#### Pull Request Style
+- DO NOT wrap pull request text bodies
+- Be sparing in your explanations and review comments, don't overstate.
+
 #### Gerrithub Workflow
 
 - Gerrithub uses `git review` with `git review development` being the equivalent of `git push`

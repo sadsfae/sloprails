@@ -1,8 +1,10 @@
 # sloprails
 
-Guard rails for that sloppin - A comprehensive claude.md configuration file for Claude Code projects.
+Guard rails for that sloppin - agent skills and an agents/claude.md file for that hard sloppin.
 
 ## What is this?
+
+### Claude.md or Agents.md
 
 This repository contains a battle-tested `claude.md` file that provides strict guardrails and best practices for working with Claude Code in software development projects. It enforces:
 
@@ -12,12 +14,38 @@ This repository contains a battle-tested `claude.md` file that provides strict g
 - DRY principles and code quality standards
 - Minimal, surgical code changes
 
+### Agent skills
+
+> [!NOTE]
+> To properly handle threaded comments in Gerrithub you want to make an HTTP credential token and save it in `.gerrit_credentials` in your QUADS directory or home directory
+
+* Add your `github` username to the skills and name in the skills
+```bash
+cd skills
+sed -ie 's/YOURUSERNAME/YOUR_ACTUAL_GITHUB_USERNAME/g' */SKILL.md
+sed -ie 's/Will Foster/Your Actual Display Name/g' */SKILL.md
+```
+* Copy the `skills` directory into `~/.agent/`
+* Your agent harness should pick it up or look for it or you can mention it by path if needed
+
 ## Quick Start
 
 ### Download directly to your project
 
 ```bash
 curl -o claude.md https://raw.githubusercontent.com/sadsfae/sloprails/main/claude.md
+```
+
+### Use with OMP
+
+Use an omp `~/.bashrc` alias to set a system prompt that gets loaded on every `omp` launch.
+
+```
+  omp_dgx_glm53() {
+      temp_agent="/tmp/omp_agents.md"
+      curl -s -o "$temp_agent" https://raw.githubusercontent.com/sadsfae/sloprails/main/claude.md 2>/dev/null
+      command omp --model remote-vllm-glm/dgx_hobo_default --append-system-prompt "$(cat "$temp_agent")" "$@"
+  }
 ```
 
 ### Use with Claude Code

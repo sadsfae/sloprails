@@ -21,6 +21,7 @@ This repository contains a battle-tested `claude.md` file that provides strict g
 
 * Add your `github` username to the skills and name in the skills
 ```bash
+git clone https://github.com/sadsfae/sloprails.git
 cd skills
 sed -ie 's/YOURUSERNAME/YOUR_ACTUAL_GITHUB_USERNAME/g' */SKILL.md
 sed -ie 's/Will Foster/Your Actual Display Name/g' */SKILL.md

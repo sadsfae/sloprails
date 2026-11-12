@@ -176,4 +176,4 @@ Finish the merge, always:
 
 ## Staging and temp data
 
-Never stage work under `/tmp`: it is a small RAM-backed tmpfs here (about 3 GB free) and heavy runs fail there. Clone, create venvs, download, and keep scratch payloads under `~/REVIEWS/<repo>-<topic>/`; run suites with `mkdir -p ~/REVIEWS/tmp && TMPDIR=~/REVIEWS/tmp COVERAGE_FILE=~/REVIEWS/tmp/.coverage`. Full details: `skill://reviews_staging`.
+Never stage work under `/tmp`: it can be a RAM-backed tmpfs with little free space and heavy runs fail there. Clone, create venvs, download, and keep scratch payloads under `~/REVIEWS/<repo>-<topic>/`; run suites with `mkdir -p ~/REVIEWS/tmp && TMPDIR=~/REVIEWS/tmp COVERAGE_FILE=~/REVIEWS/tmp/.coverage`.

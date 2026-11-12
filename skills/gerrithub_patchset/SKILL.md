@@ -12,7 +12,7 @@ do so (e.g. "make a patchset", "push this", "address the comments", "git review"
   `ssh://YOURUSERNAME@review.gerrithub.io:29418`, configured in `.gitreview`). Never
   switch that remote to HTTPS or feed it credentials.
 - **HTTP credentials are for Gerrit REST only.** The Gerrit HTTP password lives in
-  `~/git_modules/quads/.gerrit_credentials` (gitignored as of change 1248936).
+  `<quads-checkout>/.gerrit_credentials` (gitignored as of change 1248936).
   It is used solely for inline-comment/vote POSTs via
   `https://review.gerrithub.io/a/...`; never pass it to git transports, and
   never print it to output.
@@ -149,7 +149,7 @@ git commit --amend                         # keep the existing Change-Id
   unless asked. If asked to post: change messages via
   `ssh ... gerrit review <N>,<patchset> --message '...'`, votes via
   `--code-review +2`; inline comments use the HTTP password from
-  `~/git_modules/quads/.gerrit_credentials` (never via SSH; SSH has no inline
+  `<quads-checkout>/.gerrit_credentials` (never via SSH; SSH has no inline
   comment support) and go through
   `POST https://review.gerrithub.io/a/changes/<N>/revisions/current/review`
   with a `comments` map (this Gerrit does not implement the modern

@@ -44,6 +44,16 @@
 - ALWAYS adapt to the existing writing style.
 - If there are already TOC entries, make or adapt to TOC entries
 
+### General Prose Usage
+- Always use the humanizer skill if it's installed, this is usually in
+  `~/.agent/skills/humanizer/SKILL.md`
+
+### Agent Skills
+- Always first stop to check available skills in `~/.agent/skills/` if the
+  prompt directly mentions actions or tasks that can benefit from them
+explicitly, but do not make assumptions either:  prompt the user if the
+skill-to-task-mapping is even remotely uncertain
+
 ### Code Style
 
 - NEVER use emojis or unicode in the actual code, don't be cute.
